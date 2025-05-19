@@ -1,0 +1,26 @@
+<h1>Add a New Entry</h1>
+
+<form action="/entries" method="post">
+  <p>
+    <label for="title">Title:</label>
+    <input name="title" id="title" type="text">
+  </p>
+  
+  <p>
+    <label for="description">Description:</label>
+    <input name="description" id="description" type="text">
+  </p>
+  
+  <p>
+    <label for="posted_on">Date:</label>
+    <input name="posted_on" id="posted_on" type="date">
+  </p>
+  
+  <input type="hidden" name="place_id" value="<%= @place_id %>">
+  
+  <button>Add Entry</button>
+</form>
+
+<p>
+  <a href="/places/<%= @place_id %>">Cancel</a>
+</p>
