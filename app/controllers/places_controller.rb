@@ -1,17 +1,17 @@
 class PlacesController < ApplicationController
   def index
     @places = Place.all
-    render({ :template => "places/index.html.erb" })
+    render :index
   end
   
   def show
     @place = Place.find(params[:id])
-    render({ :template => "places/show.html.erb" })
+    render :show 
   end
   
   def new
     @place = Place.new
-    render({ :template => "places/new.html.erb" })
+    render :new 
   end
   
   def create
@@ -21,7 +21,7 @@ class PlacesController < ApplicationController
     if @place.save
       redirect_to("/places")
     else
-      render({ :template => "places/new.html.erb" })
+      render :new
     end
   end
 end
